@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon app.js",
+    "test": "test --passWithNoTests",
     "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "dependencies": {
