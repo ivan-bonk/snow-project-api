@@ -1,15 +1,18 @@
-const express = require ('express');
-const bodyParser = require ('body-parser');
-const cors = require ('cors');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const usersPoute = require('../routes/users');
 const userPetRouter = require('../routes/user_pet');
 const petRouter = require('../routes/pets');
 
-async function loadingApp (app) {
-
-  app.get('/status', (req, res) => { res.status(200).end(); });
-  app.head('/status', (req, res) => { res.status(200).end(); });
+async function loadingApp(app) {
+  app.get('/status', (req, res) => {
+    res.status(200).end();
+  });
+  app.head('/status', (req, res) => {
+    res.status(200).end();
+  });
   app.enable('trust proxy');
 
   app.use(cors());
@@ -22,6 +25,6 @@ async function loadingApp (app) {
   app.use('/user_pet', userPetRouter);
 
   return app;
-};
+}
 
 module.exports = loadingApp;
