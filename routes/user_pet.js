@@ -42,7 +42,7 @@ router.patch('/:userPetId', async (req, res) => {
           lenght: req.body.lenght,
           walkCount: req.body.walkCount,
           foodCount: req.body.foodCount,
-          PECount: rq.body.PECount,
+          PECount: req.body.PECount,
         },
       },
     );
