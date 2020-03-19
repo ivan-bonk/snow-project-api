@@ -1,11 +1,13 @@
 const loaders = require('./loaders');
 const express = require('express');
-require('dotenv/config');
+require('dotenv').config();
 
 async function startServer() {
   const app = express();
 
   await loaders(app);
+
+  console.log(process.env.PORT)
 
   app.listen(process.env.PORT, err => {
     if (err) {
