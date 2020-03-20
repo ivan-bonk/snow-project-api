@@ -1,15 +1,18 @@
 const loaders = require('./loaders');
 const express = require('express');
-require('dotenv').config();
+
+let port = process.env.PORT;
 
 async function startServer() {
   const app = express();
 
   await loaders(app);
 
-  console.log(process.env.PORT)
+  app.get('/', (req, res) => {
+    res.send('This is Home page')
+  })
 
-  app.listen(process.env.PORT, err => {
+  app.listen(port, err => {
     if (err) {
       console.log(err);
       return;
