@@ -31,6 +31,7 @@ router.delete('/:petId', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const pet = new Pet({
+    imgUrl: req.body.imgUrl,
     alias: req.body.alias,
     description: req.body.description,
     popularity: req.body.popularity,

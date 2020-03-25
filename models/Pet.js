@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PetSchema = new mongoose.Schema({
-  //img: {}
+  imgUrl: String,
   alias: String,
   description: String,
   popularity: {
@@ -50,7 +50,7 @@ const PetSchema = new mongoose.Schema({
   weight: String,
   price: String,
   maintenancePrice: Number, //per month
-  careTime: Number, //per day
+  careTime: String, //minutes per day
   suitForFlat: Boolean,
   suitForFamily: Boolean,
   specificity: String,
