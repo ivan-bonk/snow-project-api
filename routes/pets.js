@@ -31,28 +31,11 @@ router.delete('/:petId', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const pet = new Pet({
+    breed: req.body.breed,
     imgUrl: req.body.imgUrl,
-    alias: req.body.alias,
-    description: req.body.description,
-    popularity: req.body.popularity,
-    training: req.body.training,
-    size: req.body.size,
-    mind: req.body.mind,
-    protection: req.body.protection,
-    childRelation: req.body.childRelation,
-    agility: req.body.agility,
-    problem: req.body.problem,
-    country: req.body.country,
-    lifeDuration: req.body.lifeDuration,
-    height: req.body.height,
-    weight: req.body.weight,
-    price: req.body.price,
-    maintenancePrice: req.body.maintenancePrice, //per month
-    careTime: req.body.careTime, //per day
-    suitForFlat: req.body.suitForFlat,
-    suitForFamily: req.body.suitForFamily,
-    specificity: req.body.specificity,
-    problems: req.body.problems,
+    characteristics: req.body.characteristics,
+    observations: req.body.observations,
+    additionalInfo: req.body.additionalInfo
   });
 
   try {
