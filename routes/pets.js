@@ -35,6 +35,7 @@ router.post('/', async (req, res) => {
     imgUrl: req.body.imgUrl,
     characteristics: req.body.characteristics,
     observations: req.body.observations,
+    ownerInfo: req.body.ownerInfo,
     additionalInfo: req.body.additionalInfo
   });
 

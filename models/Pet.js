@@ -51,14 +51,26 @@ const PetSchema = new mongoose.Schema({
     height: String,
     weight: String,
     price: String,
-    carePrice: String, //per month
+    carePrice: Number, //per month
     careTime: Number,
+    careComplications: String,
+    walkNumber: Number,
+    mealNumber: Number,
+    mealWeight: Number,
+    MedCheckUp: Number,
+  },
+  ownerInfo: {
+    easyTrain: Boolean,
+    familyFit: Boolean,
+    apartmentFit: Boolean,
+    hypoallergenicity: Boolean,
   },
   additionalInfo: {
     about: String,
-    specialities: [],
+    specialties: [],
     issues: []
   }
 });
 
 module.exports = mongoose.model('pets', PetSchema);
+
