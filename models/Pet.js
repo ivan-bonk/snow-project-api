@@ -57,7 +57,7 @@ const PetSchema = new mongoose.Schema({
     walkNumber: Number,
     mealNumber: Number,
     mealWeight: Number,
-    MedCheckUp: Number,
+    medCheckUp: Number,
   },
   ownerInfo: {
     easyTrain: Boolean,
