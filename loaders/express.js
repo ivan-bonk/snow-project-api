@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const petRouter = require('../routes/pets');
+const aliasRouter = require('../routes/alias');
 
 async function loadingApp(app) {
   app.get('/status', (req, res) => {
@@ -18,6 +19,7 @@ async function loadingApp(app) {
   app.use(cors());
   app.use(bodyParser.json());
   app.use('/pets', petRouter);
+  app.use('/alias', aliasRouter);
 
   return app;
 }
