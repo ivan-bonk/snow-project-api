@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const pets = await Pet.find();
     return res.json(pets);
   } catch (err) {
-    return res.json({ massage: err });
+    return res.status(404).json({ massage: err });
   }
 });
 
@@ -16,7 +16,7 @@ router.get('/:petId', async (req, res) => {
     const pet = await Pet.findById(req.params.petId);
     return res.json(pet);
   } catch (err) {
-    return res.json({ massage: err });
+    return res.status(404).json({ massage: err });
   }
 });
 
@@ -25,7 +25,7 @@ router.delete('/:petId', async (req, res) => {
     const removePet = await Pet.remove({ _id: req.params.petId });
     return res.json(removePet);
   } catch (err) {
-    return res.json({ massage: err });
+    return res.status(404).json({ massage: err });
   }
 });
 
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
     const savedPet = await pet.save();
     return res.json(savedPet);
   } catch (err) {
-    return res.json({ message: err });
+    return res.status(404).json({ message: err });
   }
 });
 
