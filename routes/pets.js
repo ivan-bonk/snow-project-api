@@ -11,6 +11,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/breeds', async (req, res) => {
+  try {
+    const pets = await Pet.find();
+    return res.json(pets.map((pet) => pet.breed))
+  } catch(err) {
+    return res.status(404).json({message: err});
+  }
+})
+
 router.get('/:petId', async (req, res) => {
   try {
     const pet = await Pet.findById(req.params.petId);
